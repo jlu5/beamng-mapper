@@ -114,6 +114,9 @@ class BeamSVGMapper():
         else:
             return
 
+        if self.width <= 1024 or self.height <= 1024:
+            radius /= 1.5
+
         point = drawSvg.Circle(x, y, radius, fill=fill, fill_opacity=fill_opacity)
         if text:
             point.appendTitle(text)
